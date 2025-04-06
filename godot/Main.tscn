@@ -3,3 +3,4 @@
 [node name="Node3D" type="Node3D"]
 
 [node name="ConwayPolyhedron" type="ConwayPolyhedron" parent="."]
+recipe = "tdtdtdtdtI"
