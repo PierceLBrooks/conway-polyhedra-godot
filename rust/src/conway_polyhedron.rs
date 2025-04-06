@@ -32,8 +32,14 @@ impl ConwayPolyhedron {
                     return;
                 }
             };
-
-            println!("{}", poly.write_obj(Path::new(String::from_utf8_unchecked(path.to_utf8_buffer().to_vec()).as_str()), true).unwrap().display());
+            let res = match poly.write_obj(Path::new(String::from_utf8_unchecked(path.to_utf8_buffer().to_vec()).as_str()), true) {
+                Ok(r) => r,
+                Err(e) => {
+                    println!("{}", e);
+                    return;
+                }
+            };
+            println!("{}", res.display());
         }
     }
 }
