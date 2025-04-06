@@ -1,15 +1,30 @@
-# Godot 4+ specific ignores
-.godot/
+# IDEs
+.vscode
+.idea
+.run
 
-# Godot-specific ignores
-.import/
-export.cfg
-export_credentials.cfg
+# Rust
+target
+Cargo.lock
 
-# Imported translations (automatically generated from CSV files)
-*.translation
+# Godot
+# .godot needs to be a pattern like this and not a directory, otherwise the negative statements below don't apply
+**/.godot/**
+*.import
 
-# Mono-specific ignores
-.mono/
-data_*/
-mono_crash.*.json
+# Needed to run projects without having to open the editor first.
+!**/.godot/extension_list.cfg
+
+# This project: input JSONs and code generation
+gen
+
+# Temporary tweaks, remove later
+/script
+*.bat
+exp.rs
+
+# Mac specific
+.DS_Store
+
+# Windows specific
+desktop.ini

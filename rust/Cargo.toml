@@ -1,0 +1,22 @@
+[package]
+name = "conway-polyhedra"
+version = "0.1.0"
+authors = ["Pierce Brooks <piercebrks@gmail.com>"]
+edition = "2021"
+rust-version = "1.85"
+keywords = ["3d", "creative", "geometry", "graphics", "rendering"]
+categories = ["graphics", "mathematics", "multimedia", "rendering"]
+license = "MIT OR Apache-2.0 OR Zlib"
+description = "Godot Extension for Conway/Hart Polyhedron Operations"
+readme = "README.md"
+repository = "https://github.com/PierceLBrooks/conway-polyhedra-godot/"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+polyhedron-ops = { git = "https://github.com/virtualritz/polyhedron-ops.git", features = ["parser", "obj"] }
+godot = { git = "https://github.com/godot-rust/gdext.git" }
+# For Wasm, feature "experimental-wasm" can be added, but this is already done in build-wasm.sh script.
+
