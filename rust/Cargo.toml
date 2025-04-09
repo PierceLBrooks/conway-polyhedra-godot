@@ -20,3 +20,6 @@ polyhedron-ops = { git = "https://github.com/virtualritz/polyhedron-ops.git", fe
 godot = { git = "https://github.com/godot-rust/gdext.git" }
 # For Wasm, feature "experimental-wasm" can be added, but this is already done in build-wasm.sh script.
 
+[dev-dependencies]
+anyhow = { version = "1.0", features = ["backtrace"] }
+
