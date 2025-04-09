@@ -22,7 +22,7 @@ pub struct ConwayPolyhedron {
 impl ConwayPolyhedron {
     #[func]
     fn export_as_obj(&mut self, path: GString) -> bool {
-        let full = str(&[path.to_variant(), self.recipe.to_variant(), GString::from(".obj").to_variant()]);
+        let full = str(&[path.to_variant(), GString::from("polyhedron-").to_variant(), self.recipe.to_variant(), GString::from(".obj").to_variant()]);
         if FileAccess::file_exists(&full) {
             let obj = match ResourceLoader::singleton().load_ex(&full).cache_mode(CacheMode::REPLACE_DEEP).done() {
                 Some(o) => o,
